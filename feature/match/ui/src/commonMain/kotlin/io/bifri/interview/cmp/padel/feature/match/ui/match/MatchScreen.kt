@@ -70,7 +70,7 @@ fun MatchRoute(
     totalCourts: Int?,
     onBackClick: () -> Unit,
     onError: (Throwable) -> Unit,
-    viewModel: MatchViewModel = koinViewModel(key = matchId.toString()) {
+    viewModel: MatchViewModel = koinViewModel {
         parametersOf(matchId, tournamentName, totalCourts)
     },
 ) {

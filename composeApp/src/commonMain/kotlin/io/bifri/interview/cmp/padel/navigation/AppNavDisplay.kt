@@ -7,6 +7,7 @@ import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.ui.NavDisplay
 import androidx.navigation3.ui.defaultPopTransitionSpec
 import io.bifri.interview.cmp.padel.core.ui.navigation.pop
+import io.bifri.interview.cmp.padel.core.ui.navigation.rememberDefaultNavEntryDecorators
 import io.bifri.interview.cmp.padel.feature.match.ui.navigation.MatchNavDisplay
 import io.bifri.interview.cmp.padel.feature.tournament.ui.navigation.TournamentNavDisplay
 import io.bifri.interview.cmp.padel.navigation.AppRoute.MatchGraph
@@ -19,6 +20,7 @@ fun AppNavDisplay(
 ) {
     NavDisplay(
         backStack = backStack,
+        entryDecorators = rememberDefaultNavEntryDecorators(),
         predictivePopTransitionSpec = { defaultPopTransitionSpec<NavKey>()() },
         entryProvider = entryProvider {
             entry<TournamentGraph> {
